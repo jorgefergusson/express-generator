@@ -1,0 +1,28 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/top_nav.ejs %>
+<main class="container">
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+
+  <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Company</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let index=0; index<ProductList.length;index++) { %>
+            <tr>
+                <td><%= ProductList[index].name %></td>
+                <td><%= ProductList[index].company %></td>
+                <td><%= ProductList[index].price %></td>
+            </tr>
+        <% } %>
+    </tbody>
+    
+  </table>
+
+</main>
+
+<%- include ../partials/footer.ejs %> <%- include ../partials/bottom_nav.ejs %>
