@@ -81,4 +81,19 @@ router.post('/edit/:id', (req, res, next) => {
       }
   });
 });
+
+router.get('/delete/:id', (req, res, next) => {
+  let id = req.params.id;
+
+  
+
+  Product.remove({_id: id}, (err) => {
+      if(err){
+          console.log(err);
+          res.end(err);
+      }else{
+          res.redirect('/product');
+      }
+  });
+});
 module.exports = router;
